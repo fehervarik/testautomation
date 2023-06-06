@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import pages.LoginPage;
 import pages.MainPage;
 
-public class TescoTest {
+public class TescoTest extends BaseTest{
 
     @Test
     @DisplayName("TC01_Tesco login test")
