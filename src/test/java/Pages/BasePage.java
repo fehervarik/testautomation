@@ -1,4 +1,4 @@
-package CucmberPages;
+package Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,14 +8,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BasePage2 {
+public class BasePage {
     protected static WebDriver driver;
 
     protected static WebDriverWait wait;
 
-    public BasePage2(WebDriver driver) {
-        BasePage2.driver = driver;
-        BasePage2.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public BasePage(WebDriver driver) {
+        BasePage.driver = driver;
+        BasePage.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         PageFactory.initElements(driver, this);
     }
