@@ -20,23 +20,25 @@ public class LangPage extends BasePage {
     @FindBy(css = "#utility-header-registration-link > span")
     WebElement regButton;
 
-    public void lang() {
-        if (langButton.equals("magyar")) {
-            driver.findElement(xpath("//*[@id=\"utility-header-language-switch-link\"]/span/span")).click();
-        }
-
-        if (langButton.equals("english")) {
-            driver.findElement(xpath("//*[@id=\"utility-header-language-switch-link\"]/span/span")).click();
+    /* nyelvváltás abban az esetben, ha ténylegesen váltani kell en -> hu, hu -> en */
+    public void changeLang(String language) {
+        if ((langButton.getText().equals("Magyar") &&
+                language.equals("magyar")) ||
+                (langButton.getText().equals("English") &&
+                        language.equals("angol"))) {
+            langButton.click();
         }
     }
 
-    public void validation() {
+    public void validation(String language) {
 
-        if (langButton.equals("magyar")) {
-            assertEquals("Register", regButton.getText()); // org.junit
+        if (language.equals("angol")) {
+            assertEquals("Magyar", langButton.getText());
+            assertEquals("Register", regButton.getText());
         }
-        if (langButton.equals("english")) {
-            assertEquals("Regisztráció", regButton.getText()); // org.junit
+        if (langButton.getText().equals("magyar")) {
+            assertEquals("English", langButton.getText());
+            assertEquals("Regisztráció", regButton.getText());
         }
     }
 

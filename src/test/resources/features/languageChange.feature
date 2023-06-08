@@ -13,6 +13,6 @@ Feature: I want ot change the language on Tesco MainPage.
       Then it shows elements in "<new_language>"
 
       Examples:
-        | language  | new_language  |
-        | magyar    | english       |
-        | english   | magyar       |
+        | language | new_language |
+        | magyar   | angol        |
+        | angol    | magyar       |
