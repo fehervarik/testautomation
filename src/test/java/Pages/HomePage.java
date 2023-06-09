@@ -43,10 +43,7 @@ public class HomePage extends BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        //bker mező keresés
-        // kitölt senfKeys a product változóval
-        //nagyító ikonra kattint
-        //
+
     }
 
 
